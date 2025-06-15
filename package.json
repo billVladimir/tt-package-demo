@@ -1,6 +1,6 @@
 {
   "name": "tt-package-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A demo package for Total TypeScript",
   "keywords": [
     "demo",
@@ -22,6 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.29.4",
     "prettier": "^3.5.3",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
@@ -35,7 +36,9 @@
     "check-exports": "attw --pack .",
     "lint": "tsc",
     "test": "vitest run",
-    "dev": "vitest"
+    "dev": "vitest",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "main": "dist/index.js",
   "exports": {
